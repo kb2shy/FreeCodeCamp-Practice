@@ -17,6 +17,7 @@ const findLongestWordLength = (str) => {
         let temp = 0;
         if (str[right] === " ") {
             temp = right - left - 1;
+            left = right;
         } else if (right === str.length - 1) {
             temp = right - left;
         }
@@ -24,7 +25,6 @@ const findLongestWordLength = (str) => {
             max = temp;
         }
         right++;
-        left = right;
     }
     
     return max;
