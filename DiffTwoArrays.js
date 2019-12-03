@@ -1,18 +1,21 @@
 const diffTwoArrays = (arr1, arr2) => {
-    const newArr = [];
-    for (let el of arr1) {
-        if (!arr2.includes(el) && !newArr.includes(el)) {
-            newArr.push(el);
-        }
-    }
+    // const newArr = [];
+    // for (let el of arr1) {
+    //     if (!arr2.includes(el) && !newArr.includes(el)) {
+    //         newArr.push(el);
+    //     }
+    // }
 
-    for (let el of arr2) {
-        if (!arr1.includes(el) && !newArr.includes(el)) {
-            newArr.push(el);
-        }
-    }
+    // for (let el of arr2) {
+    //     if (!arr1.includes(el) && !newArr.includes(el)) {
+    //         newArr.push(el);
+    //     }
+    // }
 
-    return newArr;
+    const f1 = arr1.filter(el => !arr2.includes(el));
+    const f2 = arr2.filter(el => !arr1.includes(el));
+
+    return [...f1, ...f2];
 }
 
 console.log(diffTwoArrays([1, 2, 3, 5], [1, 2, 3, 4, 5]));
