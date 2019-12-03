@@ -12,10 +12,10 @@ const diffTwoArrays = (arr1, arr2) => {
     //     }
     // }
 
-    const f1 = arr1.filter(el => !arr2.includes(el));
-    const f2 = arr2.filter(el => !arr1.includes(el));
+    let f1 = arr1.filter(el => !arr2.includes(el));
+    f1 = f1.concat(arr2.filter(el => !arr1.includes(el)));
 
-    return [...f1, ...f2];
+    return f1;
 }
 
 console.log(diffTwoArrays([1, 2, 3, 5], [1, 2, 3, 4, 5]));
