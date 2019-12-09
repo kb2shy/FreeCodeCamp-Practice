@@ -9,15 +9,23 @@ const smallestCommonMultiple = (arr) => {
 
     let count = revSortArr[1];
     let minCommon = revSortArr[0] * count;
-    let repeat = true;
-    while (repeat) {
+    // let repeat = true;
+    while (true) {
         for (let i = 0; i < revSortArr.length; i++) {
-            if (minCommon % i == 0) {
-
+            if (minCommon % revSortArr[i] !== 0) {
+                break;
+            }
+            if (i === revSortArr.length - 1 && minCommon % revSortArr[i] === 0) {
+                return minCommon;
             }
         }
+        minCommon = revSortArr[0] * ++count;
     }
-    return ;
+
 }
 
 console.log(smallestCommonMultiple([1,5]));
+console.log(smallestCommonMultiple([5,1]));
+console.log(smallestCommonMultiple([2,10]));
+console.log(smallestCommonMultiple([1,13]));
+console.log(smallestCommonMultiple([23,18]));
