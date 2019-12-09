@@ -21,7 +21,6 @@ const smallestCommonMultiple = (arr) => {
         }
         minCommon = revSortArr[0] * ++count;
     }
-
 }
 
 console.log(smallestCommonMultiple([1,5]));
