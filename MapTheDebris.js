@@ -8,9 +8,7 @@ const orbitalPeriod = (arr) => {
         const op = 2 * Math.PI * Math.sqrt(a / GM);
         newArr.push({name: obj["name"], orbitalPeriod: Math.round(op)});
     });
-    // const a = Math.pow(earthRadius + arr[0]["avgAlt"], 3);
-    // const op = 2 * Math.PI * Math.sqrt(a / GM);
-    // newArr.push({ orbitalPeriod: Math.round(op)})
+
     return newArr;
 }
 
