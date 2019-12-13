@@ -50,6 +50,16 @@ const checkCashRegister = (price, cash, cid) => {
         }
     }
 
+    let checkChange = 0;
+    for (let element of changeArray) {
+        checkChange += element[1];
+    }
+    console.log("checkChange = " + checkChange);
+    
+    if (checkChange !== change) {
+        return { status: "INSUFFICIENT_FUNDS", change: [] };
+    }
+    
     return { status: "OPEN", change: changeArray};
 }
 
