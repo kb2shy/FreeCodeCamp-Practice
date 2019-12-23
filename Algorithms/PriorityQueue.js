@@ -24,6 +24,7 @@ function PriorityQueue() {
     }
 
     this.dequeue = function() {
+        if (this.collection.length === 0) return;
         return this.collection.shift();
     }
 
@@ -37,11 +38,19 @@ function PriorityQueue() {
 }
 
 var pq = new PriorityQueue();
-console.log("is list empty: " + pq.isEmpty());
+// console.log("is list empty: " + pq.isEmpty());
 pq.enqueue(['kitten', 2]);
 pq.enqueue(['human', 1]);
 pq.enqueue(['master', 1]);
-console.log("is list empty: " + pq.isEmpty());
+// console.log("is list empty: " + pq.isEmpty());
+pq.printCollection();
+console.log(pq.size());
+pq.dequeue();
+pq.printCollection();
+console.log(pq.size());
+pq.enqueue(['mouse', 5]);
+pq.enqueue(['elephant', 4]);
+pq.enqueue(['tiger', 4]);
 pq.printCollection();
 pq.dequeue();
 pq.printCollection();
